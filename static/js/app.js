@@ -36,17 +36,17 @@ function createCharts(sample) {
             labels: otu_ids.slice(0, 10),
             hovertext: otu_labels.slice(0, 10),
             hoverinfo: "hovertext",
-            colorscale: "RdBu"
+            // colorscale: "RdBu"
             type: "pie"
           }
         ];
         
         let pieChartLayout = {
           margin: { t: 0, l: 0 },
-          plot_bgcolor: "#B5BFFF"
+          // plot_bgcolor: "#B5BFFF"
         };
     
-        Plotly.plot("pie", pieChartData, pieChartLayout, hole=.1);
+        Plotly.plot("pie", pieChartData, pieChartLayout, /*hole=.1*/);
 
         // @TODO: Build a Bubble Chart Using the Sample Data
         let bubbleChartData = [
@@ -58,7 +58,7 @@ function createCharts(sample) {
             marker: {
               size: sample_values,
               color: otu_ids,
-              colorscale: "RdBu"
+              colorscale: "Picnic"
             }
           }
         ]
@@ -67,7 +67,7 @@ function createCharts(sample) {
           margin: { t: 0 },
           hovermode: "closests",
           xaxis: { title: "OTU ID"},
-          plot_bgcolor: "#B5BFFF"
+          // plot_bgcolor: "#B5BFFF"
         }
     
         Plotly.plot("bubble", bubbleChartData, bubbleChartLayout);
