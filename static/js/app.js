@@ -14,9 +14,9 @@ function constructMetadata(sample) {
         // Hint: Inside the loop, you will need to use d3 to append new tags for each key-value in the metadata
         Object.entries(data).forEach(([key, value]) => {
             selectManipulatePanel.append("h5").text(`${key}:${value}`);
-        })
-    })
-}
+        });
+    });
+};
 
 function createCharts(sample) {
 
@@ -36,17 +36,16 @@ function createCharts(sample) {
             labels: otu_ids.slice(0, 10),
             hovertext: otu_labels.slice(0, 10),
             hoverinfo: "hovertext",
-            // colorscale: "RdBu"
+            colorscale: "Picnic",
             type: "pie"
           }
         ];
         
         let pieChartLayout = {
-          margin: { t: 0, l: 0 },
-          // plot_bgcolor: "#B5BFFF"
+          margin: { t: 0, l: 0 }
         };
     
-        Plotly.plot("pie", pieChartData, pieChartLayout, /*hole=.1*/);
+        Plotly.plot("pie", pieChartData, pieChartLayout);
 
         // @TODO: Build a Bubble Chart Using the Sample Data
         let bubbleChartData = [
@@ -61,18 +60,17 @@ function createCharts(sample) {
               colorscale: "Picnic"
             }
           }
-        ]
+        ];
 
         let bubbleChartLayout = {
           margin: { t: 0 },
           hovermode: "closests",
-          xaxis: { title: "OTU ID"},
-          // plot_bgcolor: "#B5BFFF"
-        }
+          xaxis: { title: "OTU ID"}
+        };
     
         Plotly.plot("bubble", bubbleChartData, bubbleChartLayout);
-    })
-}
+    });
+};
 
 function init() {
 
@@ -85,7 +83,7 @@ function init() {
             dropdownSelect
                 .append("option")
                 .text(sample)
-                .property("value", sample);
+                .property("value", sample)
         });
     
         // Use the First Sample from the List to Build Initial Plots
@@ -93,14 +91,14 @@ function init() {
         createCharts(firstSample);
         constructMetadata(firstSample);
     });
-}
+};
     
 function collectNewData(newSample) {
 
     // Fetch New Data Each Time a New Sample is Selected
     createCharts(newSample);
     constructMetadata(newSample);
-}
+};
     
 // Initialize the Dashboard
 init();
