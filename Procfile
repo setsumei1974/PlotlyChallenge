@@ -1,1 +1,1 @@
-web: gunicorn umbilicalbiodiversity.app:app
+web: gunicorn umbilicalbiodiversity:app
