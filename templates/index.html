@@ -13,7 +13,7 @@
 <body style="background-color: white">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center" style="background-image: url('/static/Images/BacteriaBlue.jpg'); height: 240px; background-position: center; background-size: cover;">
+      <div class="col-md-12 jumbotron text-center" style="background-image: url('../static/Images/BacteriaBlue.jpg'); height: 240px; background-position: center; background-size: cover;">
         <h1 style="color: white">Dashboard of Umbilical Biodiversity</h1>
         <p style="color: white">Use Interactive Charts to Explore Selected Dataset</p>
       </div>
@@ -44,12 +44,12 @@
       <div id="bubble"></div>
     </div>
   </div>
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="../static/js/app.js"></script>
-  <!--<script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>-->
+  <!--<script src="../static/js/app.js"></script>-->
+  <!--<script src="{{ url_for('static', filename='js/bonus.js') }}"></script>-->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 
 </html>

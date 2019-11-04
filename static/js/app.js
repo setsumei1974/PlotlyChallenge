@@ -13,7 +13,7 @@ function constructMetadata(sample) {
         // Use `Object.entries` to add each key and value pair to the panel
         // Hint: Inside the loop, you will need to use d3 to append new tags for each key-value in the metadata
         Object.entries(data).forEach(([key, value]) => {
-            selectManipulatePanel.append("h5").text(`${key}:${value}`);
+            selectManipulatePanel.append("h6").text(`${key}:${value}`);
         });
     });
 };
